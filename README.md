@@ -209,6 +209,45 @@
 
 <ul>
 	<li>
+		<p>Leave a line in between object literal function definitions.</p>
+		
+		<p>
+			Avoid:
+<pre>
+	var axonom = {
+		foo: function () {
+		 	// stuff
+		 },
+		bar: function () {
+		 	// stuff
+		 },
+		stuff: function () {
+		 	// stuff
+		 }
+	};
+</pre>
+		</p>
+		
+					Prefer:
+<pre>
+	var axonom = {
+		foo: function () {
+		 	// stuff
+		 },
+		 
+		bar: function () {
+		 	// stuff
+		 },
+		 
+		stuff: function () {
+		 	// stuff
+		 }
+	};
+</pre>
+		</p>
+	</li>
+
+	<li>
 		<p>Avoid using multiline string literals (google styleguide)</p>
 
 		<p>
@@ -336,7 +375,43 @@
 	<li>
 		<p>Prefer to refactor functions longer than 30 lines.</p>
 	</li>
-
+	
+	<li>
+		<p>Avoid checking in commented-out code.</p>
+		
+		<p>
+			Avoid:
+<pre>
+	function CartGuideCtrl($scope, interviewer) {
+		//$scope.$on('interviewStart', onInterviewStart);
+		//$scope.$on('interviewFinish', onInterviewFinish);
+		$scope.$on('interviewResponseSynced', onResponseSync);
+		$scope.$on('enterPane', onPaneChange);
+		$scope.$on('responseChanged', onResponseChange);
+		interviewer.executionMode = "configurator";
+		//interviewer.start(requestedGuideId, requestedGuideVersionId);
+		
+		...
+	}
+</pre>
+	    	</p>
+	    	
+	    	<p>
+	    		Prefer:
+<pre>
+	// Controller scoped to the PC section tabs and guide controls
+	function CartGuideCtrl($scope, interviewer) {
+		$scope.$on('interviewResponseSynced', onResponseSync);
+		$scope.$on('enterPane', onPaneChange);
+		$scope.$on('responseChanged', onResponseChange);
+		interviewer.executionMode = "configurator";
+		
+		...
+	}
+</pre>
+	    	</p>
+	</li>
+	
 	<li>
 		<p>
 			Coerce to boolean where boolean is expected
