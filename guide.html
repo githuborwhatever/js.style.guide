@@ -14,6 +14,7 @@
 		<ul>
 			<li>Always use lowerCamelCase.</li>
 			<li>Never use hungarian notation (m_memberVariable).</li>
+			<li>Always prepend private member variable names with an underscore.</li>
 		</ul>
 	</li>
 
