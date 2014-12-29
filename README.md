@@ -39,7 +39,7 @@
 			
 			<ul>
 				<li><p>Prefer to target DOM elements by class name.</p></li>
-				<li><p>Class names being targetted by Javascript should [b]NOT[/b] be targetted by CSS.</p></li>
+				<li><p>Class names being targetted by Javascript should <b>not</b> be targetted by CSS.</p></li>
 				<li><p>Class names targetted by Javascript should begin with "js-".</p></li>
 			</ul>
 	</li>
